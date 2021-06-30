@@ -1,0 +1,18 @@
+.navbar-brand {
+  color: rgb(116, 233, 222);
+  font-family: "Public Sans", sans-serif;
+  font-weight: 600;
+  font-size: 25px;
+}
+.fas {
+  color: #da5f70;
+  margin-right: 10px;
+}
+.nav-item {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 900;
+  font-size: 17px;
+}
+.bg-light {
+  background-color: #ffffff !important;
+}

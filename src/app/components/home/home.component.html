@@ -1,0 +1,40 @@
+<div class="container">
+  <app-data-panel [casosConfirmados]="casosConfirmados" [muertes]="muertes" [recuperados]="recuperados"
+    [newConfirmed]="newConfirmed" [newDeaths]="newDeaths" [newRecovered]="newRecovered" [totalActivate]="totalActivate">
+  </app-data-panel>
+  <h2 class="text-center">Paises mas afectados por la pandemia</h2>
+  <div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="c" #c
+        (click)="updateChart('TotalConfirmed')" value="TotalConfirmed" checked="">
+      <label class="form-check-label" for="c">Confirmados</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="m" #m
+        (click)="updateChart('TotalDeaths')" value="TotalDeaths">
+      <label class="form-check-label" for="m">Muertes</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="r" #r
+        (click)="updateChart('TotalRecovered')" value="TotalRecovered">
+      <label class="form-check-label" for="r">Recuperados</label>
+    </div>
+  </div>
+  <div class="row align-items-start">
+    <div class="col">
+      <!-- <app-home-pie-chart [countries]="countries" [casesByCountries]="casesByCountries"></app-home-pie-chart> -->
+      <div class="chart-wrapper">
+        <canvas baseChart [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType"
+          [options]="pieChartOptions" [plugins]="pieChartPlugins" [legend]="pieChartLegend" [colors]="pieChartColors">
+        </canvas>
+      </div>
+    </div>
+    <div class="col">
+      <div style="display: block;">
+        <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+         [legend]="barChartLegend" [colors]="barChartColors" [chartType]="barChartType" [options]="barChartSize">
+        </canvas>
+      </div>
+    </div>
+  </div>
+</div>

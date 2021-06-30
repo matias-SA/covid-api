@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="jumbotron text-center bg-grey">
+    <h1 class="title">CORONAVIRUS COUNTRY DATA</h1>
+    <hr>
+  </div>
+  <mat-form-field>
+    <mat-select [(ngModel)]="countrySelected" (selectionChange)="countryChanged()">
+      <mat-option [value]="con" *ngFor="let con of countriesNames">{{con}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <br>
+  <app-data-panel [casosConfirmados]="casosConfirmados" [muertes]="muertes" [recuperados]="recuperados"
+    [newConfirmed]="newConfirmed" [newDeaths]="newDeaths" [newRecovered]="newRecovered" [totalActivate]="totalActivate">
+  </app-data-panel>
+  <div class="row align-items-start">
+    <div class="col-4">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Dia</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Casos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let day of dayToDayData.reverse(); index as i">
+            <td>{{totalDays - i}}</td>
+            <td>{{day.Date.slice(0,10)}}</td>
+            <td>{{this.confirmedPerDay[i]}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-8">
+      <div style="display: block">
+        <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+          [legend]="barChartLegend" [chartType]="barChartType">
+        </canvas>
+      </div>
+    </div>
+  </div>
+</div>
