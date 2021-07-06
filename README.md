@@ -1,4 +1,8 @@
-# PokeAPI
+# Covid API
+
+Aplicacion web con el fin de pintar los distintos datos de covid en el mundo. Trabaje interiorizandome en las llamadas y manejos HTTP.
+
+Tecnologias utilizadas: Angular 10, Bootstrap y ChartJS
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.3.
 
